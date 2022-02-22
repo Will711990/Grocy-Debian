@@ -11,7 +11,7 @@ Project Source: https://github.com/grocy/grocy
 
 ## One Line Installer:
 ```
-curl -sSL https://raw.githubusercontent.com/LinuxOperator/Grocy-Debian/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/Will711990/Grocy-Debian/main/install.sh | bash
 ```
 
 ## Initial Configure:
