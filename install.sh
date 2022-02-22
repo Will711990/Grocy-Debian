@@ -11,7 +11,7 @@ rm "grocy_${version}.zip"
 chmod +x update.sh
 chown www-data: /var/www/html -R
 
-cp /var/www/html/config-dist.php /var/www/html/data/config.php
+cp /var/www/html/grocy/config-dist.php /var/www/html/grocy/data/config.php
 
 echo -e "<VirtualHost *:80>" >> /etc/apache2/sites-available/grocy.conf
 echo -e "  ServerAdmin webmaster@localhost" >> /etc/apache2/sites-available/grocy.conf
