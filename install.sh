@@ -1,8 +1,7 @@
 #!/bin/bash
 apt install -y apache2 unzip php libapache2-mod-php php-sqlite3 php-gd
 
-mkdir /var/www/html/grocy/
-cd /var/www/html/grocy
+cd /var/www/html
 rm index.html
 version="3.2.0"
 wget -q "https://github.com/grocy/grocy/releases/download/v${version}/grocy_${version}.zip"
@@ -11,7 +10,7 @@ rm "grocy_${version}.zip"
 chmod +x update.sh
 chown www-data: /var/www/html -R
 
-cp /var/www/html/grocy/config-dist.php /var/www/html/grocy/data/config.php
+cp /var/www/html/config-dist.php /var/www/html/data/config.php
 
 echo -e "<VirtualHost *:80>" >> /etc/apache2/sites-available/grocy.conf
 echo -e "  ServerAdmin webmaster@localhost" >> /etc/apache2/sites-available/grocy.conf
