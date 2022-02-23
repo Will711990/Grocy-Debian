@@ -1,5 +1,5 @@
 #!/bin/bash
-apt install -y apache2 unzip php libapache2-mod-php php-sqlite3 php-gd
+apt install -y apache2 unzip php libapache2-mod-php php-sqlite3 php-gd wget
 
 rm /var/www/html/index.html
 cd /var/www/html/
