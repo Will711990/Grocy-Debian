@@ -1,20 +1,20 @@
 #!/bin/bash
-apt install -y apache2 unzip php libapache2-mod-php php-sqlite3 php-gd wget
+apt install -y apache2 unzip php libapache2-mod-php php-sqlite3 php-gd
 
-rm /var/www/html/index.html
-cd /var/www/html/
+cd /var/www/html
+rm index.html
 version="3.2.0"
 wget -q "https://github.com/grocy/grocy/releases/download/v${version}/grocy_${version}.zip"
 unzip "grocy_${version}.zip"
 rm "grocy_${version}.zip"
 chmod +x update.sh
-chown www-data: /var/www/html/ -R
+chown www-data: /var/www/html -R
 
 cp /var/www/html/config-dist.php /var/www/html/data/config.php
 
 echo -e "<VirtualHost *:80>" >> /etc/apache2/sites-available/grocy.conf
 echo -e "  ServerAdmin webmaster@localhost" >> /etc/apache2/sites-available/grocy.conf
-echo -e "  DocumentRoot /var/www/html/grocy/public" >> /etc/apache2/sites-available/grocy.conf
+echo -e "  DocumentRoot /var/www/html/public" >> /etc/apache2/sites-available/grocy.conf
 echo -e "  ErrorLog \${APACHE_LOG_DIR}/error.log" >> /etc/apache2/sites-available/grocy.conf
 echo -e "  CustomLog \${APACHE_LOG_DIR}/access.log vhost_combined" >> /etc/apache2/sites-available/grocy.conf
 echo -e "</VirtualHost>" >> /etc/apache2/sites-available/grocy.conf
