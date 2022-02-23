@@ -1,14 +1,14 @@
 #!/bin/bash
 apt install -y apache2 unzip php libapache2-mod-php php-sqlite3 php-gd
 
-cd /var/www/html
+mkdir /var/www/html/grocy/
+cd /var/www/html/grocy/
 rm index.html
 version="3.2.0"
 wget -q "https://github.com/grocy/grocy/releases/download/v${version}/grocy_${version}.zip"
 unzip "grocy_${version}.zip"
 rm "grocy_${version}.zip"
 chmod +x update.sh
-mkdir /var/www/html/grocy/
 chown www-data: /var/www/html/grocy/ -R
 
 cp /var/www/html/grocy/config-dist.php /var/www/html/grocy/data/config.php
