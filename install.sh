@@ -27,12 +27,10 @@ a2ensite grocy.conf
 a2enmod rewrite
 systemctl reload apache2
 
-ip=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/')
 echo ""
 echo ""
 echo "--------------------------------------------------------------------------"
 echo "Instal complete!"
-echo "Navigate to http://${ip}/"
 echo ""
 echo "Don't forget to change the default Username & Password (admin/admin)!!!"
 echo "--------------------------------------------------------------------------"
