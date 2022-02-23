@@ -8,13 +8,14 @@ wget -q "https://github.com/grocy/grocy/releases/download/v${version}/grocy_${ve
 unzip "grocy_${version}.zip"
 rm "grocy_${version}.zip"
 chmod +x update.sh
-chown www-data: /var/www/html -R
+mkdir /var/www/html/grocy/
+chown www-data: /var/www/html/grocy/ -R
 
-cp /var/www/html/config-dist.php /var/www/html/data/config.php
+cp /var/www/html/grocy/config-dist.php /var/www/html/grocy/data/config.php
 
 echo -e "<VirtualHost *:80>" >> /etc/apache2/sites-available/grocy.conf
 echo -e "  ServerAdmin webmaster@localhost" >> /etc/apache2/sites-available/grocy.conf
-echo -e "  DocumentRoot /var/www/html/public" >> /etc/apache2/sites-available/grocy.conf
+echo -e "  DocumentRoot /var/www/html/grocy/public" >> /etc/apache2/sites-available/grocy.conf
 echo -e "  ErrorLog \${APACHE_LOG_DIR}/error.log" >> /etc/apache2/sites-available/grocy.conf
 echo -e "  CustomLog \${APACHE_LOG_DIR}/access.log vhost_combined" >> /etc/apache2/sites-available/grocy.conf
 echo -e "</VirtualHost>" >> /etc/apache2/sites-available/grocy.conf
