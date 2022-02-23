@@ -3,7 +3,7 @@ apt install -y apache2 unzip php libapache2-mod-php php-sqlite3 php-gd
 
 rm /var/www/html/index.html
 cd /var/www/html/
-version="3.1.3"
+version="3.2.0"
 wget -q "https://github.com/grocy/grocy/releases/download/v${version}/grocy_${version}.zip"
 unzip "grocy_${version}.zip"
 rm "grocy_${version}.zip"
